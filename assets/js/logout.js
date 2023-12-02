@@ -23,7 +23,7 @@ const logout = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Menghapus cookie
-        deleteCookie("token");
+        deleteCookie("Authorization");
         // Menampilkan Sweet Alert berhasil logout
         Swal.fire({
           icon: "success",
