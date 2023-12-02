@@ -32,18 +32,6 @@ const Login = () => {
 
 }
 
-// const responseData = (result) => {
-//     if (result.status === true) {
-//         // Jika memiliki token, simpan token di cookie
-//         setCookieWithExpireHour("Authorization", result.token, 2);
-//         // Tampilkan SweetAlert berhasil login
-//         window.location.href = "list_kegiatan.html";
-//     } else {
-//         // Jika tidak memiliki token, tampilkan SweetAlert pesan kesalahan
-//         alert(result.message);
-//     }
-// }
-
 const responseData = (result) => {
     if (result.status === true) {
         setCookieWithExpireHour("Authorization", result.token, 2);

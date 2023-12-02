@@ -184,7 +184,7 @@
                 <div class="field-body">
                   <div class="field">
                     <p class="control is-expanded">
-                      <input class="input" type="text" placeholder="Masukkan judul kegiatan">
+                      <input id="title" class="input" type="text" placeholder="Masukkan judul kegiatan">
                     </p>
                   </div>
                 </div>
@@ -198,7 +198,7 @@
                 <div class="field-body">
                   <div class="field">
                     <div class="control">
-                      <textarea class="textarea" placeholder="Masukkan deskripsi kegiatan"></textarea>
+                      <textarea id="description" class="textarea" placeholder="Masukkan deskripsi kegiatan"></textarea>
                     </div>
                   </div>
                 </div>
@@ -207,12 +207,12 @@
               <hr>
               <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    <label class="label">Date</label>
+                    <label class="label">Deadline</label>
                 </div>
                 <div class="field-body">
                     <div class="field">
                         <p class="control is-expanded">
-                            <input type="date" class="input">
+                            <input id="deadline" type="date" class="input">
                         </p>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                   <div class="field">
                     <div class="field is-grouped">
                       <div class="control">
-                        <button type="submit" class="button is-primary">
+                        <button type="submit" class="button is-primary" id="btnInsert">
                           <span>Submit</span>
                         </button>
                       </div>

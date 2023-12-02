@@ -16,16 +16,16 @@ function postRegister(target_url, data, responseFunction) {
 
 const Register = () => {
     
-        const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-register";
+    const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-register";
     
-        const data = {
-            "email" : getValue("email"),
-            "username": getValue("username"),
-            "password": getValue("password"),
-            "confirmpassword": getValue("confirmpassword"),
-        };
+    const data = {
+        "email" : getValue("email"),
+        "username": getValue("username"),
+        "password": getValue("password"),
+        "confirmpassword": getValue("confirmpassword"),
+    };
     
-        postRegister(target_url, data, responseData);
+    postRegister(target_url, data, responseData);
 }
 
 const responseData = (result) => {
