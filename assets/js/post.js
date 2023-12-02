@@ -5,7 +5,7 @@ import { getCookie } from "https://jscroot.github.io/cookie/croot.js";
 const insertTodo = () => {
     const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-insertTodo";
     const tokenkey = "Authorization";
-    const tokenvalue = getCookie(tokenkey);
+    const tokenvalue = getCookie("Authorization");
 
     const data = {
         "title": getValue("title"),
