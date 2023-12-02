@@ -1,5 +1,6 @@
 export const formTodolist = `
 <td></td>
+<td></td>
 <td data-label="Title">#TITLE#</td>
 <td data-label="Description">#DESCRIPTION#</td>
 <td data-label="Date">#DEADLINE#</td>
