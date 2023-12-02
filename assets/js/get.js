@@ -2,9 +2,9 @@ import { addInner } from "https://jscroot.github.io/element/croot.js";
 import { formTodolist } from "./table.js";
 import { get } from "./process.js";
 
-function showTodolist(result) {
+function showTodolist(results) {
     result.forEach(showData);
-    console.log(result);
+    console.log(results);
 }
 
 // const urlParams = new URLSearchParams(window.location.search);
