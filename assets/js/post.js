@@ -1,7 +1,6 @@
 import { postWithToken } from "https://jscroot.github.io/api/croot.js";
 import { getValue } from "https://jscroot.github.io/element/croot.js";
 import { getCookie } from "https://jscroot.github.io/cookie/croot.js";
-import { formattedDeadline } from "./formatdate.js"
 
 const insertTodo = () => {
     const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-insertTodo";
@@ -11,7 +10,7 @@ const insertTodo = () => {
     const data = {
         "title": getValue("title"),
         "description": getValue("description"),
-        "deadline": formattedDeadline,
+        "deadline": getValue("deadline"),
     };
 
     postWithToken(target_url, tokenkey, tokenvalue, data, responseData);
