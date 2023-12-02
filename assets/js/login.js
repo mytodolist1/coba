@@ -22,7 +22,7 @@ function responseData(result) {
     
     if (result.status === true) {
         setCookieWithExpireHour("token", result.token, 2);
-        window.location.href = "landing.html"; 
+        window.location.href = "list_kegiatan.html"; 
     } else {
         return false;
     }
