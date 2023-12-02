@@ -20,10 +20,18 @@ function getWithToken(target_url, responseFunction) {
 
 const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-getTodo";
 
+const dataTodo  = (value) => {
+    const data = formTodolist
+    .replace("#TITLE#", value.email)
+    .replace("#DESCRIPTION#", value.description)
+    .replace("#DEADLINE#", value.deadline);
+
+    addInner("tableTodolist", data);
+}
+
 const responseData = (result) => {
     if (result.status === true) {
-        const data = result.data;
-        addInner("table", formTodolist(data));
+        result.data.forEach(dataTodo);
     } else {
         alert(result.message);
     }
