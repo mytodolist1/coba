@@ -18,7 +18,15 @@ if (isNaN(deadlineDate.getTime())) {
         title: "Invalid Deadline",
         text: "Please enter a valid date for the deadline.",
     });
-        return;
+} else {
+    const today = new Date();
+    if (deadlineDate < today) {
+        Swal.fire({
+            icon: "error",
+            title: "Invalid Deadline",
+            text: "Deadline must be greater than today.",
+        });
+    }
 }
 
 export const formattedDeadline = formatDate(deadlineDate);
