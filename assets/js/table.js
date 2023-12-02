@@ -1,4 +1,4 @@
-export let formTodolist = `
+export const formTodolist = `
 <td data-label="Title">#TITLE#</td>
 <td data-label="Description">#DESCRIPTION#</td>
 <td data-label="Date">#DEADLINE#</td>

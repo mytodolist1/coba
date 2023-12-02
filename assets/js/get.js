@@ -1,20 +1,10 @@
 import { getCookie } from "https://jscroot.github.io/cookie/croot.js";
 import { addInner } from "https://jscroot.github.io/element/croot.js";
 import { formTodolist } from "./table.js";
-// import { get } from "./process.js";
 
-async function getTodolist() {
-    const tokens = getCookie("token");
-
-    if (!tokens) {
-        alert("Token not found, redirecting to login.");
-        return;
-    }
-
-    const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-getTodo";
-
+function getWithToken(target_url, responseFunction) {
     const myHeaders = new Headers();
-    myHeaders.append("Authorization", tokens);
+    myHeaders.append("Authorization", getCookie("Authorization"));
 
     const requestOptions = {
         method: 'GET',
@@ -22,23 +12,21 @@ async function getTodolist() {
         redirect: 'follow'
     };
 
-    try {
-        const response = await fetch(target_url, requestOptions);
-        const result = await response.json();
+    fetch(target_url, requestOptions)
+        .then(response => response.text())
+        .then(result => responseFunction(JSON.parse(result)))
+        .catch(error => console.log('error', error));
+}
 
-        if (result === true) {
-            displayTodolist(result.data);
-        } else {
-            alert(result.message);
-        }
-    } catch (error) {
-        console.log('error', error);
+const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-getTodo";
+
+const responseData = (result) => {
+    if (result.status === true) {
+        const data = result.data;
+        addInner("table", formTodolist(data));
+    } else {
+        alert(result.message);
     }
 }
 
-function displayTodolist(data) {
-    const table = document.getElementById("tableTodolist");
-    addInner(table, formTodolist(data));
-}
-
-window.onload = getTodolist;
+getWithToken(target_url, responseData);
