@@ -33,26 +33,42 @@ const Login = () => {
 }
 
 const responseData = (result) => {
-    if (result.token) {
+    if (result.status === true) {
         // Jika memiliki token, simpan token di cookie
         setCookieWithExpireHour("Authorization", result.token, 2);
         // Tampilkan SweetAlert berhasil login
         Swal.fire({
-          icon: "success",
-          title: "Login Successful",
-          text: "You have successfully logged in.",
+            icon: "success",
+            title: "Login Successful",
+            text: result.message,
         }).then(() => {
-            window.location.href = "../list_kegiatan.html";
+            window.location.href = "list_kegiatan.html";
         });
 
-    } else {
-        // Jika tidak memiliki token, tampilkan SweetAlert pesan kesalahan
-        Swal.fire({
-          icon: "error",
-          title: "Login Failed",
-          text: result.message,
-        });
     }
-};
+}
+
+// const responseData = (result) => {
+//     if (result.token) {
+//         // Jika memiliki token, simpan token di cookie
+//         setCookieWithExpireHour("Authorization", result.token, 2);
+//         // Tampilkan SweetAlert berhasil login
+//         Swal.fire({
+//           icon: "success",
+//           title: "Login Successful",
+//           text: "You have successfully logged in.",
+//         }).then(() => {
+//             window.location.href = "list_kegiatan.html";
+//         });
+
+//     } else {
+//         // Jika tidak memiliki token, tampilkan SweetAlert pesan kesalahan
+//         Swal.fire({
+//           icon: "error",
+//           title: "Login Failed",
+//           text: result.message,
+//         });
+//     }
+// };
 
 window.Login = Login;
