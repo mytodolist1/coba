@@ -3,8 +3,12 @@ import { formTodolist } from "./table.js";
 import { get } from "./process.js";
 
 function showTodolist(results) {
-    results.forEach(showData);
-    console.log(results);
+    if (Array.isArray(results)) {
+        results.forEach(showData);
+        console.log(results);
+    } else {
+        console.error("Data received is not an array:", results);
+    }
 }
 
 // const urlParams = new URLSearchParams(window.location.search);

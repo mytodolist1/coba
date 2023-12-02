@@ -24,7 +24,12 @@ export function deleteData(target_url, responseFunction) {
   };
   
   fetch(target_url, requestOptions)
-    .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+        throw new Error(`Network response was not ok, status: ${response.status}`);
+    }
+    return response.text();
+}).then(response => response.json())
     .then(result => responseFunction(result))
     .catch(error => console.log('Error:', error));
 }
@@ -37,6 +42,6 @@ export function get(target_url,responseFunction){
   
     fetch(target_url, requestOptions)
     .then(response => response.text())
-    .then(result => responseFunction(result))
+    .then(result => responseFunction(JSON.parse(result)))
     .catch(error => console.log('error', error));
 }
