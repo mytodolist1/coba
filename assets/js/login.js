@@ -42,15 +42,7 @@ const responseData = (result) => {
           title: "Login Successful",
           text: "You have successfully logged in.",
         }).then(() => {
-            // Redirect ke halaman todolist.html
-            if (result.role === "admin") {
-                window.location.href = "admin.html";
-            } else if (result.role === "user") {
-                window.location.href = "list_kegiatan.html";
-            } else {
-                console.error("Unknown user role:", result.role);
-
-            }
+            window.location.href = "../list_kegiatan.html";
         });
 
     } else {
