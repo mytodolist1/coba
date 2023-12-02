@@ -65,4 +65,6 @@ const responseData = (result) => {
     }
 };
 
-window.Login = Login;
+const btnLogin = document.getElementById("btnLogin");
+
+btnLogin.addEventListener("click", Login);

@@ -1,21 +1,51 @@
-import { postWithBearer } from "https://jscroot.github.io/api/croot.js";
 import { getValue } from "https://jscroot.github.io/element/croot.js";
 
-function Register(){
-    let target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-register";
-    let token = "token";
+function postRegister(target_url, data, responseFunction) {
 
-    let data = {
-        "email": getValue("email"),
-        "username": getValue("username"),
-        "password": getValue("password"),
+    const requestOptions = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        redirect: 'follow'
     };
-    postWithBearer(target_url, token, data, responseData);
+
+    fetch(target_url, requestOptions)
+        .then(response => response.text())
+        .then(result => responseFunction(JSON.parse(result)))
+        .catch(error => console.log('error', error));
 }
 
-function responseData(result) {
-    alert(result.message);
-    window.location.href = "login.html";
+const Register = () => {
+    
+        const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-register";
+    
+        const data = {
+            "email" : getValue("email"),
+            "username": getValue("username"),
+            "password": getValue("password"),
+            "confirmPassword": getValue("confirmPassword"),
+        };
+    
+        postRegister(target_url, data, responseData);
 }
 
-document.getElementById("button1").addEventListener("click", Register);
+const responseData = (result) => {
+    if (result.status === true) {
+        Swal.fire({
+            icon: "success",
+            title: "Register Successful",
+            text: result.message,
+        }).then(() => {
+            window.location.href = "login.html";
+        });
+    } else {
+        Swal.fire({
+            icon: "error",
+            title: "Register Failed",
+            text: result.message,
+        });
+    }
+}
+
+const btnRegister = document.getElementById("btnRegister");
+
+btnRegister.addEventListener("click", Register);
