@@ -1,3 +1,4 @@
+import { getCookie } from "https://jscroot.github.io/cookie/croot.js";
 import { addInner } from "https://jscroot.github.io/element/croot.js";
 import { formTodolist } from "./table.js";
 import { get } from "./process.js";
@@ -15,6 +16,12 @@ function showTodolist(results) {
 // const user = urlParams.get("user");
 
 let targer_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-getTodo";
+
+const token = getCookie("token");
+ if (!token) {
+    console.log("Token not found, redirecting to login.");
+    return false;
+} 
 
 function showData(data) {
     let form = formTodolist

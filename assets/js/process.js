@@ -45,7 +45,7 @@ export function get(target_url,responseFunction){
       if (!response.ok) {
           throw new Error(`Network response was not ok, status: ${response.status}`);
       }
-      return response.text();
+      return response.json();
     })
     .then(result => responseFunction(JSON.parse(result)))
     .catch(error => console.log('error', error));
