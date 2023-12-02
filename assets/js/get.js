@@ -14,7 +14,7 @@ async function getTodolist() {
     const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-getTodo";
 
     const myHeaders = new Headers();
-    myHeaders.append("token", tokens);
+    myHeaders.append("Authorization", tokens);
 
     const requestOptions = {
         method: 'GET',
