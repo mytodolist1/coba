@@ -17,13 +17,14 @@ function showTodolist(results) {
 
 let targer_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-getTodo";
 
-const token = getCookie("token");
- if (!token) {
-    console.log("Token not found, redirecting to login.");
-    return false;
-} 
-
 function showData(data) {
+
+    const token = getCookie("token");
+        if (!token) {
+            console.log("Token not found, redirecting to login.");
+            return false;
+        } 
+
     let form = formTodolist
         .replace("#TITLE#", data.title)
         .replace("#DESCRIPTION#", data.description)
