@@ -37,14 +37,10 @@ const responseData = (result) => {
         // Jika memiliki token, simpan token di cookie
         setCookieWithExpireHour("Authorization", result.token, 2);
         // Tampilkan SweetAlert berhasil login
-        Swal.fire({
-            icon: "success",
-            title: "Login Successful",
-            text: result.message,
-        }).then(() => {
-            window.location.href = "list_kegiatan.html";
-        });
-
+        window.location.href = "list_kegiatan.html";
+    } else {
+        // Jika tidak memiliki token, tampilkan SweetAlert pesan kesalahan
+        alert(result.message);
     }
 }
 
