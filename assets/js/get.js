@@ -11,7 +11,7 @@ async function getTodolist() {
         return;
     }
 
-    const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-get";
+    const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-getTodo";
 
     const myHeaders = new Headers();
     myHeaders.append("token", tokens);
