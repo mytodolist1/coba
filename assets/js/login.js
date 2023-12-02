@@ -45,10 +45,9 @@ const Login = () => {
 // }
 
 const responseData = (result) => {
-    if (result.token) {
-        // Jika memiliki token, simpan token di cookie
+    if (result.status === true) {
         setCookieWithExpireHour("Authorization", result.token, 2);
-        // Tampilkan SweetAlert berhasil login
+
         Swal.fire({
           icon: "success",
           title: "Login Successful",
@@ -58,7 +57,6 @@ const responseData = (result) => {
         });
 
     } else {
-        // Jika tidak memiliki token, tampilkan SweetAlert pesan kesalahan
         Swal.fire({
           icon: "error",
           title: "Login Failed",
