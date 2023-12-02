@@ -1,5 +1,10 @@
 export const formTodolist = `
-<td></td>
+<td class="is-checkbox-cell">
+<label class="b-checkbox checkbox">
+  <input type="checkbox" value="false">
+  <span class="check"></span>
+</label>
+</td>
 <td></td>
 <td data-label="Title">#TITLE#</td>
 <td data-label="Description">#DESCRIPTION#</td>
