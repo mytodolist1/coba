@@ -56,4 +56,4 @@ const responseData = (result) => {
     }
 };
 
-window.PostSignIn = PostSignIn;
+window.Login = Login;
