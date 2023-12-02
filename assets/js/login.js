@@ -6,7 +6,7 @@ import { setCookieWithExpireHour } from "https://jscroot.github.io/cookie/croot.
 export default function Login(){
 
     let target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-login";
-    let token = "token";
+    let token = "Authorization";
     // let tokenvalue = "d4f1c80e75682f5cc33895fb3ccfe6e5165fea6df42d463eb7144e34db2d3ef0"; 
     let data = {
         "username": getValue("username"),

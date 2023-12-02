@@ -30,8 +30,13 @@ export function deleteData(target_url, responseFunction) {
 }
 
 export function get(target_url,responseFunction){
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
     var requestOptions = {
     method: 'GET',
+    headers: myHeaders,
     redirect: 'follow'
     };
   
