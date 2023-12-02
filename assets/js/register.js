@@ -22,7 +22,7 @@ const Register = () => {
             "email" : getValue("email"),
             "username": getValue("username"),
             "password": getValue("password"),
-            "confirmPassword": getValue("confirmPassword"),
+            "confirmpassword": getValue("confirmpassword"),
         };
     
         postRegister(target_url, data, responseData);
