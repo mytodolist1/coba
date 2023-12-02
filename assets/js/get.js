@@ -3,7 +3,7 @@ import { formTodolist } from "./table.js";
 import { get } from "./process.js";
 
 function showTodolist(results) {
-    result.forEach(showData);
+    results.forEach(showData);
     console.log(results);
 }
 
