@@ -16,7 +16,7 @@ if (isNaN(deadlineDate.getTime())) {
     Swal.fire({
         icon: "error",
         title: "Invalid Deadline",
-        text: "Please enter a valid date for the deadline.",
+        text: "Masukkan deadline yang valid.",
     });
 } else {
     const today = new Date();
@@ -24,7 +24,7 @@ if (isNaN(deadlineDate.getTime())) {
         Swal.fire({
             icon: "error",
             title: "Invalid Deadline",
-            text: "Deadline must be greater than today.",
+            text: "Deadline tidak boleh kurang dari hari ini.",
         });
     }
 }
