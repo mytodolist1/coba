@@ -1,5 +1,5 @@
 import { addInner } from "https://jscroot.github.io/element/croot.js";
-import { formTodolist } from "table.js";
+import { formTodolist } from "./table.js";
 import { get } from "./process.js";
 
 function showTodolist(result) {
