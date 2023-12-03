@@ -51,8 +51,8 @@ const updateTodo = () => {
     putData(target_url, data, responseData);
 };
 
-window.updateTodo = updateTodo;
+// window.updateTodo = updateTodo;
 
-// const btnUpdate = document.getElementById("btnUpdate");
+const btnUpdate = document.getElementById("btnUpdate");
 
-// btnUpdate.addEventListener("click", updateTodo);
+btnUpdate.addEventListener("click", updateTodo);
