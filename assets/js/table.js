@@ -18,12 +18,22 @@ export const formTodolist = `
 </td>
 `;
 
-function showModal() {
-  const modal = document.getElementById("edit-modal");
+document.addEventListener('DOMContentLoaded', function () {
+  const editButton = document.querySelector('.jb-modal');
+  const editModal = document.getElementById('edit-modal');
+  const closeModalButtons = document.querySelectorAll('.jb-modal-close');
 
-  modal.style.display = 'block';
-}
+  const showModal = () => {
+    editModal.classList.add('is-active');
+  };
 
-const jbModal = document.querySelector(".jb-modal");
+  const hideModal = () => {
+    editModal.classList.remove('is-active');
+  };
 
-jbModal.addEventListener("click", showModal);
+  editButton.addEventListener('click', showModal);
+
+  closeModalButtons.forEach(button => {
+    button.addEventListener('click', hideModal);
+  });
+});
