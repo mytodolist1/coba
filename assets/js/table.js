@@ -5,29 +5,39 @@ export const formTodolist = `
 <td data-label="Date">#DEADLINE#</td>
 <td class="is-actions-cell">
 <div class="buttons is-right">
-  <button class="button is-small is-primary jb-modal" data-target="edit-modal" type="button">
+  <button class="button is-small is-primary jb-modal" data-target="edit-modal" data-id="#ID#" type="button">
     <span class="icon"><i class="mdi mdi-eye"></i></span>
   </button>
-  <button class="button is-small is-danger" type="button">
+  <button class="button is-small is-danger" data-id="#ID#" type="button">
     <span class="icon"><i class="mdi mdi-trash-can"></i></span>
   </button>
 </div>
 </td>
 `;
 
-
-Array.from(document.getElementsByClassName('jb-modal')).forEach(function (el) {
-  el.addEventListener('click', function (e) {
-    var modalTarget = e.currentTarget.getAttribute('data-target');
-    document.getElementById(modalTarget).classList.add('is-active');
-    document.documentElement.classList.add('is-clipped');
-  });
+document.addEventListener('click', async (event) => {
+  const target = event.target;
+  if (target.classList.contains('is-primary')) {
+    const itemId = target.getAttribute('data-id');
+    // Panggil fungsi untuk menampilkan modal edit berdasarkan itemId
+    await showEditModal(itemId);
+  } else if (target.classList.contains('is-danger')) {
+    const itemId = target.getAttribute('data-id');
+    // Panggil fungsi untuk menghapus item berdasarkan itemId
+    await deleteItem(itemId);
+  }
 });
-/* Modal: close */
 
-Array.from(document.getElementsByClassName('jb-modal-close')).forEach(function (el) {
-  el.addEventListener('click', function (e) {
-    e.currentTarget.closest('.modal').classList.remove('is-active');
-    document.documentElement.classList.remove('is-clipped');
-  });
-});
+// Fungsi untuk menampilkan modal edit
+const showEditModal = async (itemId) => {
+  // Ambil data berdasarkan itemId dan tampilkan modal edit
+  // ...
+  console.log('Edit item with ID:', itemId);
+};
+
+// Fungsi untuk menghapus item
+const deleteItem = async (itemId) => {
+  // Hapus item berdasarkan itemId
+  // ...
+  console.log('Delete item with ID:', itemId);
+};
