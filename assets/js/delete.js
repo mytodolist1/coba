@@ -1,48 +1,71 @@
 import { getCookie } from "https://jscroot.github.io/cookie/croot.js";
+// import { addInner } from "https://jscroot.github.io/element/croot.js";
+import { formTodolist } from "./table.js";
 
-const deleteTodo = async (IDHAPUS) => {
-  const todoID = IDHAPUS;
-  const token = getCookie("Authorization");
+const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-getTodoByID";
 
-  const isConfirmed = await Swal.fire({
-    title: "Benarkah anda ingin menghapus data ini?",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Benar",
-    cancelButtonText: "Tidak",
+// Fungsi untuk menambahkan elemen HTML berdasarkan data ToDoList
+const renderToDoList = (data) => {
+  const container = document.getElementById('tableTodolist');
+  container.innerHTML = ''; // Bersihkan kontainer sebelum menambahkan elemen baru
+
+  data.forEach((item) => {
+    const html = formTodolist
+      .replace("#ID#", item._id)
+      .replace("#TITLE#", item.title)
+      .replace("#DESCRIPTION#", item.description)
+      .replace("#DEADLINE#", item.deadline);
+
+    const element = document.createElement('tr');
+    element.innerHTML = html;
+    container.appendChild(element);
+
+    // Menambahkan event listener untuk tombol-tombol pada item
+    const editButton = element.querySelector(`[data-id="${item._id}"][data-target="edit-modal"]`);
+    const deleteButton = element.querySelector(`[data-id="${item._id}"].is-danger`);
+
+    // Event handler untuk tombol edit
+    editButton.addEventListener('click', () => {
+      showEditModal(item._id);
+    });
+
+    // Event handler untuk tombol delete
+    deleteButton.addEventListener('click', () => {
+      deleteTodo(item._id);
+    });
   });
-
-  if (isConfirmed.isConfirmed) {
-    const myHeaders = new Headers();
-    myHeaders.append("Authorization", token);
-
-    const target_url =
-      "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist_deleteTodo?_id=" + todoID;
-
-    try {
-      const response = await fetch(target_url, {
-        method: "DELETE",
-        headers: myHeaders,
-        redirect: "follow",
-      });
-
-      if (response.ok) {
-        await Swal.fire({
-          icon: "success",
-          title: "Data berhasil dihapus",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        location.reload();
-      } else {
-        throw new Error("Request failed with status: " + response.status);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  }
 };
 
-window.deleteTodo = deleteTodo;
+// Fungsi untuk menampilkan modal edit
+const showEditModal = (itemId) => {
+  // Lakukan logika untuk menampilkan modal edit berdasarkan itemId
+  // ...
+  console.log('Edit item with ID:', itemId);
+};
+
+// Fungsi untuk menghapus item
+const deleteTodo = async (itemId) => {
+  // Lakukan logika penghapusan berdasarkan itemId
+  // ...
+  console.log('Delete item with ID:', itemId);
+};
+
+// Fungsi untuk mendapatkan data dengan token
+const getWithToken = (targetUrl, responseFunction) => {
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", getCookie("Authorization"));
+
+  const requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+  };
+
+  fetch(targetUrl, requestOptions)
+    .then(response => response.text())
+    .then(result => responseFunction(JSON.parse(result)))
+    .catch(error => console.log('error', error));
+};
+
+// Mengambil data dengan token dan merender ke dalam dokumen
+getWithToken(target_url, renderToDoList);
