@@ -20,19 +20,3 @@ export const formTodolist = `
 </div>
 </td>
 `;
-
-export const formUser = `
-<div class="field">
-  <label class="label">Username</label>
-  <div class="control is-clearfix">
-    <input type="text" value="#USERNAME#" class="input is-static">
-  </div>
-</div>
-<hr>
-<div class="field">
-  <label class="label">E-mail</label>
-  <div class="control is-clearfix">
-    <input type="text" value="#EMAIL#" class="input is-static">
-  </div>
-</div>
-`;
