@@ -1,7 +1,7 @@
 import { getCookie } from "https://jscroot.github.io/cookie/croot.js";
 
-const deleteMagang = async (IDHAPUS) => {
-  const magangId = IDHAPUS;
+const deleteTodo = async (IDHAPUS) => {
+  const todoID = IDHAPUS;
   const token = getCookie("Authorization");
 
   const isConfirmed = await Swal.fire({
@@ -19,7 +19,7 @@ const deleteMagang = async (IDHAPUS) => {
     myHeaders.append("Authorization", token);
 
     const target_url =
-      "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-deleteuser?_id=" + magangId;
+      "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist_deleteTodo?_id=" + todoID;
 
     try {
       const response = await fetch(target_url, {
@@ -45,4 +45,4 @@ const deleteMagang = async (IDHAPUS) => {
   }
 };
 
-window.deleteMagang = deleteMagang;
+window.deleteTodo = deleteTodo;
