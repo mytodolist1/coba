@@ -32,7 +32,6 @@ Array.from(document.getElementsByClassName('jb-navbar-menu-toggle')).forEach(fun
   });
 });
 /* Modal: open */
-document.addEventListener('DOMContentLoaded', function () {
   Array.from(document.getElementsByClassName('jb-modal')).forEach(function (el) {
     el.addEventListener('click', function (e) {
       var modalTarget = e.currentTarget.getAttribute('data-target');
@@ -48,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.documentElement.classList.remove('is-clipped');
     });
   });
-});
 
 /* Notification dismiss */
 
