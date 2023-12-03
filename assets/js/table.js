@@ -17,3 +17,13 @@ export const formTodolist = `
   </div>
 </td>
 `;
+
+function showModal() {
+  const modal = document.getElementById("edit-modal");
+
+  modal.style.display = 'block';
+}
+
+const jbModal = document.querySelector(".jb-modal");
+
+jbModal.addEventListener("click", showModal);
