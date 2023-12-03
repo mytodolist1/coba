@@ -40,7 +40,7 @@ const updateTodo = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const todoID = urlParams.get("id");
 
-    const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-updateTodo?id=" + todoID;
+    const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-updateTodo?_id=" + todoID;
 
     const data = {
         "title": getValue("edit-title-input"),

@@ -11,31 +11,12 @@ export const formTodolist = `
 <td data-label="Date">#DEADLINE#</td>
 <td class="is-actions-cell">
   <div class="buttons is-right">
-    <button class="button is-small is-primary jb-modal" data-target="#edit-modal" type="button">
+    <button class="button is-small is-primary" type="button" data-target="#sample-modal">
       <span class="icon"><i class="mdi mdi-eye"></i></span>
+    </button>
+    <button class="button is-small is-danger jb-modal" type="button">
+      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
     </button>
   </div>
 </td>
 `;
-
-document.addEventListener('DOMContentLoaded', function () {
-  const editButton = document.querySelector('.jb-modal');
-  const editModal = document.getElementById('edit-modal');
-  const closeModalButtons = document.querySelectorAll('.jb-modal-close');
-
-  const showModal = () => {
-    editModal.classList.add('is-active');
-  };
-
-  const hideModal = () => {
-    editModal.classList.remove('is-active');
-  };
-
-  if (editButton) {
-    editButton.addEventListener('click', showModal);
-  }
-
-  closeModalButtons.forEach(button => {
-    button.addEventListener('click', hideModal);
-  });
-});

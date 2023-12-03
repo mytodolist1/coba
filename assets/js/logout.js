@@ -1,7 +1,6 @@
 import { deleteCookie } from "https://jscroot.github.io/cookie/croot.js";
 
 const logout = () => {
-    // Menampilkan Sweet Alert konfirmasi
     Swal.fire({
       icon: "question",
       title: "Konfirmasi",

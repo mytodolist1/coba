@@ -15,7 +15,6 @@ function postRegister(target_url, data, responseFunction) {
 }
 
 const Register = () => {
-    
     const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-register";
     
     const data = {
