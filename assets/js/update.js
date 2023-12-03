@@ -56,6 +56,4 @@ const updateTodo = () => {
 
 const btnUpdates = document.getElementById("btnUpdate");
 
-btnUpdates.addEventListener("click", () => {
-    updateTodo();
-});
+btnUpdates.addEventListener("click", updateTodo);
