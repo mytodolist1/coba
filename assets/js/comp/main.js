@@ -32,22 +32,24 @@ Array.from(document.getElementsByClassName('jb-navbar-menu-toggle')).forEach(fun
   });
 });
 /* Modal: open */
+document.addEventListener('DOMContentLoaded', function () {
+  Array.from(document.getElementsByClassName('jb-modal')).forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      var modalTarget = e.currentTarget.getAttribute('data-target');
+      document.getElementById(modalTarget).classList.add('is-active');
+      document.documentElement.classList.add('is-clipped');
+    });
+  });
+  /* Modal: close */
 
-Array.from(document.getElementsByClassName('jb-modal')).forEach(function (el) {
-  el.addEventListener('click', function (e) {
-    var modalTarget = e.currentTarget.getAttribute('data-target');
-    document.getElementById(modalTarget).classList.add('is-active');
-    document.documentElement.classList.add('is-clipped');
+  Array.from(document.getElementsByClassName('jb-modal-close')).forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.currentTarget.closest('.modal').classList.remove('is-active');
+      document.documentElement.classList.remove('is-clipped');
+    });
   });
 });
-/* Modal: close */
 
-Array.from(document.getElementsByClassName('jb-modal-close')).forEach(function (el) {
-  el.addEventListener('click', function (e) {
-    e.currentTarget.closest('.modal').classList.remove('is-active');
-    document.documentElement.classList.remove('is-clipped');
-  });
-});
 /* Notification dismiss */
 
 Array.from(document.getElementsByClassName('jb-notification-dismiss')).forEach(function (el) {
