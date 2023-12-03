@@ -4,7 +4,7 @@ import { getCookie } from "https://jscroot.github.io/cookie/croot.js";
 const urlParams = new URLSearchParams(window.location.search);
 const todoID = urlParams.get("id");
 
-const urlFetch = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-getTodoByID?id=" + todoID;
+const urlFetch = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-getTodoByID?_id=" + todoID;
 
 function getTodoByID(target_url, responseFunction) {
   const myHeaders = new Headers();

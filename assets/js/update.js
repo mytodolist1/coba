@@ -43,9 +43,9 @@ const updateTodo = () => {
     const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-updateTodo?_id=" + todoID;
 
     const data = {
-        "title": getValue("edit-title-input"),
-        "description": getValue("edit-description-input"),
-        "deadline": getValue("edit-deadline-input"),
+        "title": getValue("title"),
+        "description": getValue("description"),
+        "deadline": getValue("deadline"),
     };
     
     putData(target_url, data, responseData);
@@ -53,6 +53,6 @@ const updateTodo = () => {
 
 // window.updateTodo = updateTodo;
 
-const btnUpdate = document.getElementById("btnUpdate");
+const btnUpdates = document.getElementById("btnUpdate");
 
-btnUpdate.addEventListener("click", updateTodo);
+btnUpdates.addEventListener("click", updateTodo);

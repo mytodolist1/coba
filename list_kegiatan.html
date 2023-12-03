@@ -133,7 +133,7 @@
       <ul class="menu-list">
         <li>
           <a href="list_kegiatan.html" class="is-active has-icon">
-            <span class="icon has-update-mark"><i class="mdi mdi-table"></i></span>
+            <span class="icon"><i class="mdi mdi-table"></i></span>
             <span class="menu-item-label">Todo List</span>
           </a>
         </li>
@@ -160,6 +160,16 @@
           </a>
         </li>
       </ul>
+
+      <p class="menu-label">Contact</p>
+      <ul class="menu-list">
+        <li>
+          <a href="https://wa.me/6282317150681?text=HAI KAK" class="has-icon">
+            <span class="icon"><i class="mdi mdi-whatsapp"></i></span>
+            <span class="menu-item-label">WhatsApp</span>
+          </a>
+        </li>
+      </ul>
     </div>
   </aside>
 
@@ -174,11 +184,11 @@
               <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
               Clients
             </p>
-            <a href="#" class="card-header-icon ib-modal">
-              <span class="icon"><i class="mdi mdi-file-edit"></i></span>
+            <a href="#" class="card-header-icon is-primary jb-modal" data-target="edit-modal">
+              <span class="icon"><i class="mdi mdi-eye-circle"></i></span>
             </a>
             <a href="#" class="card-header-icon">
-              <span class="icon"><i class="mdi mdi-delete"></i></span>
+              <span class="icon"><i class="mdi mdi-delete-circle"></i></span>
             </a>
             <a href="#" class="card-header-icon">
               <span class="icon"><i class="mdi mdi-reload"></i></span>
@@ -203,8 +213,8 @@
                     <th></th>
                   </tr>
                   </thead>
-                  <tbody>
-                  <!-- <tr>
+                  <!-- <tbody>
+                  <tr>
                     <td class="is-checkbox-cell">
                       <label class="b-checkbox checkbox">
                         <input type="checkbox" value="false">
@@ -235,8 +245,8 @@
                         </button>
                       </div>
                     </td>
-                  </tr> -->
-                  </tbody>
+                  </tr>
+                  </tbody> -->
                 </table>
               </div>
               <br>
@@ -260,27 +270,27 @@
           <div class="field">
             <label class="label">Title</label>
             <div class="control">
-              <input class="input" type="text" id="edit-title-input" value="">
+              <input class="input" type="text" id="title" value="">
             </div>
           </div>
           <div class="field">
             <label class="label">Description</label>
             <div class="control">
-              <textarea class="textarea" id="edit-description-input"></textarea>
+              <textarea class="textarea" id="description"></textarea>
             </div>
           </div>
           <div class="field">
             <label class="label">Deadline</label>
             <div class="control">
-              <input class="input" type="date" id="edit-deadline-input" value="">
+              <input class="input" type="date" id="deadline" value="">
             </div>
           </div>
         </form>
       </section>
       <footer class="modal-card-foot">
-        <button class="button jb-modal-close" onclick="cancelEdit()">Cancel</button>
+        <button class="button jb-modal-close">Cancel</button>
         <!-- Button to save changes -->
-        <button id="btnUpdate" class="button is-success" onclick="saveChange()">Update</button>
+        <button id="btnUpdate" class="button is-success">Update</button>
       </footer>
     </div>
     <button class="modal-close is-large jb-modal-close" aria-label="close"></button>
@@ -290,10 +300,8 @@
 <!-- Scripts below are for demo only -->
 <script type="text/javascript" src="./assets/js/comp/main.min.js"></script>
 
-<script type="module" src="./assets/js/showModal.js"></script>
-
-<!-- <script type="module" src="./assets/js/fetchEdit.js"></script>
-<script type="module" src="./assets/js/update.js"></script> -->
+<script type="module" src="./assets/js/fetchEdit.js"></script>
+<script type="module" src="./assets/js/update.js"></script>
 <script type="module" src="./assets/js/logout.js"></script>
 
 <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
