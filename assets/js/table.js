@@ -11,7 +11,7 @@ export const formTodolist = `
 <td data-label="Date">#DEADLINE#</td>
 <td class="is-actions-cell">
   <div class="buttons is-right">
-    <button class="button is-small is-primary jb-modal" data-target="#edit-modal" type="button" onclick="updateTodo()">
+    <button class="button is-small is-primary jb-modal" data-target="#edit-modal" type="button">
       <span class="icon"><i class="mdi mdi-eye"></i></span>
     </button>
   </div>
