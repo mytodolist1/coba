@@ -32,8 +32,6 @@ const dataTodo  = (value) => {
 const responseData = (result) => {
     if (result.status === true) {
         result.data.forEach(dataTodo);
-    } else {
-        alert(result.message);
     }
 }
 

@@ -1,8 +1,8 @@
 export const isiData = (data) => {
   const dataTodo = [
-    {id: "title", path: "todo.title"},
-    {id: "description", path: "todo.description"},
-    {id: "deadline", path: "todo.deadline"},
+    {id: "edit-title-input", path: "todo.title"},
+    {id: "edit-description-input", path: "todo.description"},
+    {id: "edit-deadline-input", path: "todo.deadline"},
   ];
 
   dataTodo.forEach(({ id, path, index, property }) => {
