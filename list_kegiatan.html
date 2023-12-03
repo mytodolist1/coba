@@ -18,7 +18,7 @@
   <!-- js -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
 
-  <script type="module" src="./assets/js/auth.js"></script>
+  <!-- <script type="module" src="./assets/js/auth.js"></script> -->
   <script type="module" src="./assets/js/get.js"></script>
 </head>
 
@@ -174,6 +174,12 @@
               <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
               Clients
             </p>
+            <a href="#" class="card-header-icon ib-modal">
+              <span class="icon"><i class="mdi mdi-file-edit"></i></span>
+            </a>
+            <a href="#" class="card-header-icon">
+              <span class="icon"><i class="mdi mdi-delete"></i></span>
+            </a>
             <a href="#" class="card-header-icon">
               <span class="icon"><i class="mdi mdi-reload"></i></span>
             </a>
@@ -272,9 +278,9 @@
         </form>
       </section>
       <footer class="modal-card-foot">
-        <button class="button jb-modal-close">Cancel</button>
+        <button class="button jb-modal-close" onclick="cancelEdit()">Cancel</button>
         <!-- Button to save changes -->
-        <button class="button is-success">Update</button>
+        <button id="btnUpdate" class="button is-success" onclick="saveChange()">Update</button>
       </footer>
     </div>
     <button class="modal-close is-large jb-modal-close" aria-label="close"></button>
@@ -284,7 +290,7 @@
 <!-- Scripts below are for demo only -->
 <script type="text/javascript" src="./assets/js/comp/main.min.js"></script>
 
-<script type="module" src="./assets/js/table.js"></script>
+<script type="module" src="./assets/js/showModal.js"></script>
 
 <!-- <script type="module" src="./assets/js/fetchEdit.js"></script>
 <script type="module" src="./assets/js/update.js"></script> -->
