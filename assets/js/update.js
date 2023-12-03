@@ -20,6 +20,7 @@ const putData = (target_url, data, responseFunction) => {
 
 const responseData = (result) => {
     if (result.status === true) {
+        console.log(result)
         Swal.fire({
             icon: "success",
             title: "Update Successful",
@@ -55,4 +56,6 @@ const updateTodo = () => {
 
 const btnUpdates = document.getElementById("btnUpdate");
 
-btnUpdates.addEventListener("click", updateTodo);
+btnUpdates.addEventListener("click", () => {
+    updateTodo();
+});

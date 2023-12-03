@@ -22,7 +22,6 @@ const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net
 
 const dataTodo  = (value) => {
     const data = formTodolist
-    .replace("#ID#", value._id)
     .replace("#TITLE#", value.title)
     .replace("#DESCRIPTION#", value.description)
     .replace("#DEADLINE#", value.deadline);
