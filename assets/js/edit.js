@@ -27,5 +27,4 @@ const getNestedValue = (obj, path, index, property) => {
   
     return value;
 };
-
   
