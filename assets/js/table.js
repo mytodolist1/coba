@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
     editModal.classList.remove('is-active');
   };
 
-  editButton.addEventListener('click', showModal);
+  if (editButton) {
+    editButton.addEventListener('click', showModal);
+  }
 
   closeModalButtons.forEach(button => {
     button.addEventListener('click', hideModal);
