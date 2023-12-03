@@ -24,7 +24,8 @@ const dataTodo  = (value) => {
     const data = formTodolist
     .replace("#TITLE#", value.title)
     .replace("#DESCRIPTION#", value.description)
-    .replace("#DEADLINE#", value.deadline);
+    .replace("#DEADLINE#", value.deadline)
+    .replace("#IDEDIT#", value._id);
 
     addInner("tableTodolist", data);
 }
