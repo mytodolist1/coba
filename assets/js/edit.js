@@ -7,7 +7,9 @@ export const isiData = (results) => {
 
   dataTodo.forEach(({ id, path, index, property }) => {
     const inputElement = document.getElementById(id);
+    console.log(`Updating element with ID ${id} with data from path ${path}`);
     const value = getNestedValue(results, path, index, property);
+    console.log(`Setting value for ${id}:`, value);
     inputElement.value = value;
   });
 }
