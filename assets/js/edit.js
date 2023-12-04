@@ -5,6 +5,8 @@ export const isiData = (results) => {
     {id: "deadline", path: "deadline"},
   ];
 
+  console.log("isiData - Input:", results);
+
   dataTodo.forEach(({ id, path, index, property }) => {
     const inputElement = document.getElementById(id);
     console.log(`Updating element with ID ${id} with data from path ${path}`);
