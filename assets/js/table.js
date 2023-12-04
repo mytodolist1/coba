@@ -14,7 +14,7 @@ export const formTodolist = `
   <a href="edit.html?_id=#IDEDIT#" data-id="#IDHAPUS# class="button is-small is-primary jb-modal" data-target="edit-modal" type="button">
     <span class="icon"><i class="mdi mdi-eye"></i></span>
   </a>
-  <button class="button is-small is-danger" type="button" onclick="deleteTodo()">
+  <button class="button is-small is-danger" type="button" onclick="deleteTodo('#DELETE#')">
     <span class="icon"><i class="mdi mdi-trash-can"></i></span>
   </button>
 </div>
