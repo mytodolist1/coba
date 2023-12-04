@@ -11,10 +11,10 @@ export const formTodolist = `
 <td data-label="Date">#DEADLINE#</td>
 <td class="is-actions-cell">
 <div class="buttons is-right">
-  <a href="edit.html?_id=#IDEDIT#" class="button is-small is-primary jb-modal" data-target="edit-modal" type="button">
+  <a href="edit.html?_id=#IDEDIT#" data-id="#IDHAPUS# class="button is-small is-primary jb-modal" data-target="edit-modal" type="button">
     <span class="icon"><i class="mdi mdi-eye"></i></span>
   </a>
-  <button class="button is-small is-danger" type="button">
+  <button class="button is-small is-danger" type="button" onclick="deleteTodo()">
     <span class="icon"><i class="mdi mdi-trash-can"></i></span>
   </button>
 </div>

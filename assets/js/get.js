@@ -25,7 +25,8 @@ const dataTodo  = (value) => {
     .replace("#TITLE#", value.title)
     .replace("#DESCRIPTION#", value.description)
     .replace("#DEADLINE#", value.deadline)
-    .replace("#IDEDIT#", value._id);
+    .replace("#IDEDIT#", value._id)
+    .replace("#IDHAPUS#", value._id);
 
     addInner("tableTodolist", data);
 }
