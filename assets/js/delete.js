@@ -1,8 +1,10 @@
 import { getCookie } from "https://jscroot.github.io/cookie/croot.js";
 
 const deleteTodo = async (IDHAPUS) => {
-  const todoID = IDHAPUS;
+  const _id = IDHAPUS;
   const token = getCookie("Authorization");
+
+  console.log("todoID:", _id);
 
   const isConfirmed = await Swal.fire({
     title: "Benarkah anda ingin menghapus data ini?",
@@ -15,11 +17,12 @@ const deleteTodo = async (IDHAPUS) => {
   });
 
   if (isConfirmed.isConfirmed) {
+    console.log("Confirmed:", isConfirmed.isConfirmed);
     const myHeaders = new Headers();
     myHeaders.append("Authorization", token);
 
     const target_url =
-      "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist_deleteTodo?_id=" + todoID;
+      "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist_deleteTodo?_id=" + _id;
 
     try {
       const response = await fetch(target_url, {
@@ -29,11 +32,11 @@ const deleteTodo = async (IDHAPUS) => {
       });
 
       if (response.ok) {
+        console.log("Response:", response);
         await Swal.fire({
           icon: "success",
           title: "Data berhasil dihapus",
           showConfirmButton: false,
-          timer: 1500,
         });
         location.reload();
       } else {
