@@ -18,13 +18,13 @@ const putData = (target_url, data, responseFunction) => {
         .catch(error => console.log('error', error));
 }
 
-const responseData = (results) => {
-    console.log("Server Response:", results);
-    if (results.status) {
+const responseData = (result) => {
+    if (result.status === true) {
+        console.log("Server Response:", result);
         Swal.fire({
             icon: "success",
             title: "Update Successful",
-            text: results.message,
+            text: result.message,
         }).then(() => {
             window.location.href = "list_kegiatan.html";
         });
@@ -32,7 +32,7 @@ const responseData = (results) => {
         Swal.fire({
             icon: "error",
             title: "Update Failed",
-            text: results.message,
+            text: result.message,
         });
     }
 }
@@ -60,4 +60,9 @@ const updateTodo = () => {
 
 const btnUpdates = document.getElementById("btnUpdate");
 
-btnUpdates.addEventListener("click", updateTodo);
+// btnUpdates.addEventListener("click", updateTodo);
+
+btnUpdates.addEventListener("click", () => {
+    console.log("button aktif");
+    updateTodo(); // Call pushData function when the button is clicked
+  });
