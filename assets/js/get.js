@@ -27,7 +27,6 @@ const dataTodo  = (value) => {
     .replace("#DEADLINE#", value.deadline)
     .replace("#IDEDIT#", value._id);
 
-    console.log(data);
     addInner("tableTodolist", data);
 }
 

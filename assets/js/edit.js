@@ -1,8 +1,8 @@
 export const isiData = (results) => {
   const dataTodo = [
-    {id: "title", path: "title"},
-    {id: "description", path: "description"},
-    {id: "deadline", path: "deadline"},
+    {id: "title", path: "data.title"},
+    {id: "description", path: "data.description"},
+    {id: "deadline", path: "data.deadline"},
   ];
 
   console.log("isiData - Input:", results);
