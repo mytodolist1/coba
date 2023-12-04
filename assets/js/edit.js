@@ -1,8 +1,8 @@
 export const isiData = (results) => {
   const dataTodo = [
-    {id: "title", path: "todo.title"},
-    {id: "description", path: "todo.description"},
-    {id: "deadline", path: "todo.deadline"},
+    {id: "title", path: "title"},
+    {id: "description", path: "description"},
+    {id: "deadline", path: "deadline"},
   ];
 
   dataTodo.forEach(({ id, path, index, property }) => {
@@ -15,9 +15,12 @@ export const isiData = (results) => {
 }
 
 const getNestedValue = (obj, path, index, property) => {
+  console.log("getNestedValue - Input:", obj, path, index, property);
     const value = path
       .split(".")
       .reduce((value, key) => (value && value[key] ? value[key] : ""), obj);
+
+      console.log("getNestedValue - Intermediate Value:", value);
   
     if (
       Array.isArray(value) &&
