@@ -18,13 +18,13 @@ const putData = (target_url, data, responseFunction) => {
         .catch(error => console.log('error', error));
 }
 
-const responseData = (result) => {
-    console.log("Server Response:", result);
-    if (result.status) {
+const responseData = (results) => {
+    console.log("Server Response:", results);
+    if (results.status) {
         Swal.fire({
             icon: "success",
             title: "Update Successful",
-            text: result.message,
+            text: results.message,
         }).then(() => {
             window.location.href = "list_kegiatan.html";
         });
@@ -32,7 +32,7 @@ const responseData = (result) => {
         Swal.fire({
             icon: "error",
             title: "Update Failed",
-            text: result.message,
+            text: results.message,
         });
     }
 }
