@@ -11,8 +11,8 @@ export const formTodolist = `
 <td data-label="Date">#DEADLINE#</td>
 <td class="is-actions-cell">
 <div class="buttons is-right">
-  <a href="edit.html?_id=#IDEDIT#" data-id="#IDHAPUS#" class="button is-small is-primary jb-modal" data-target="edit-modal" type="button">
-    <span class="icon"><i class="mdi mdi-eye"></i></span>
+  <a href="edit.html?_id=#IDEDIT#" class="button is-small is-link jb-modal" data-id="#IDHAPUS#" data-target="edit-modal" type="button">
+    <span class="icon"><i class="mdi mdi-edit-file"></i></span>
   </a>
   <button class="button is-small is-danger" type="button" onclick="deleteTodo('#DELETE#')">
     <span class="icon"><i class="mdi mdi-trash-can"></i></span>
