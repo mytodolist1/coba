@@ -2,6 +2,7 @@ import { isiData } from "./edit.js";
 import { getCookie } from "https://jscroot.github.io/cookie/croot.js";
 
 const urlParams = new URLSearchParams(window.location.search);
+console.log("urlParams:", urlParams);
 const todoID = urlParams.get("id");
 
 console.log("todoID:", todoID);
