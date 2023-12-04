@@ -19,8 +19,8 @@ const putData = (target_url, data, responseFunction) => {
 }
 
 const responseData = (result) => {
+    console.log("Server Response:", result, result.status);
     if (result.status === true) {
-        console.log("Server Response:", result);
         Swal.fire({
             icon: "success",
             title: "Update Successful",
