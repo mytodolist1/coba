@@ -39,9 +39,11 @@ const responseData = (result) => {
 
 const updateTodo = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const todoID = urlParams.get("id");
+    const _id = urlParams.get("_id");
 
-    const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-updateTodo?_id=" + todoID;
+    console.log("todoID:", _id);
+
+    const target_url = "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist-updateTodo?_id=" + _id;
 
     const data = {
         "title": getValue("title"),
@@ -50,6 +52,8 @@ const updateTodo = () => {
     };
     
     putData(target_url, data, responseData);
+
+    console.log("Data:", data);
 };
 
 // window.updateTodo = updateTodo;
