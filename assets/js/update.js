@@ -19,6 +19,7 @@ const putData = (target_url, data, responseFunction) => {
 }
 
 const responseData = (result) => {
+    console.log("Server Response:", result);
     if (result.status === true) {
         console.log(result)
         Swal.fire({
