@@ -27,12 +27,15 @@ const dataTodo  = (value) => {
     .replace("#DEADLINE#", value.deadline)
     .replace("#IDEDIT#", value._id);
 
+    console.log(data);
     addInner("tableTodolist", data);
 }
 
 const responseData = (result) => {
     if (result.status === true) {
         result.data.forEach(dataTodo);
+
+        console.log(result);
     }
 }
 
